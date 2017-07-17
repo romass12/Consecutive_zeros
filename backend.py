@@ -6,12 +6,13 @@ Created on Mon Jul 17 17:13:46 2017
 """
 
 import math
+import itertools
 test_cases = raw_input('Enter number of test cases: ')  #tells user to enter number of test cases
 for d in range(int(test_cases)):
     length = raw_input('Enter length of string: ')    #tells user to enter string length
     ind=[]    # ind list contains indices of the tuples where consecutive zeros are found
     fin_ind=[]   #fin_ind list contains range of indices considering all possible combinations for example if length=2 , fin_ind=[0,1,2,3]
-    output=list(product(range(2), repeat=int(length)))   #this creates all possible combinations of bits 1 and 0 of particular length 
+    output=list(itertools.product(range(2), repeat=int(length)))   #this creates all possible combinations of bits 1 and 0 of particular length 
     for i in range(len(output)):    #this is to access a tuple from list
         outpu=output[i]
         for j in range(int(length)-1):    #this is to access elements inside that tuple
